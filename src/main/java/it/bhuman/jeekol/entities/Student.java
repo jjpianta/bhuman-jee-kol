@@ -19,62 +19,72 @@
 
 package it.bhuman.jeekol.entities;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
- *
+ * 
  * @author uji
  */
-public class Student
-{
-    /**
-     * @return the gender
-     */
-    public Gender getGender()
-    {
-        return gender;
-    }
+@Entity
+@Table(name = "STUDENTI")
+public class Student implements Serializable {
+	@Id
+	private long id;
 
-    /**
-     * @param gender the gender to set
-     */
-    public void setGender(Gender gender)
-    {
-        this.gender = gender;
-    }
-    public static enum Gender { MALE, FEMALE };
-    
-    final private long id;
-    
-    private String name;
-    private Gender gender;
-    
-    public Student(long id, String name, Gender gender)
-    {
-        this.id = id;
-        this.name = name;
-        this.gender = gender;
-    }
+	@Column(name = "nome")
+	private String name;
+	@Column(name = "sesso")
+	private Gender gender;
 
-    /**
-     * @return the id
-     */
-    public long getId()
-    {
-        return id;
-    }
-    
-    /**
-     * @return the name
-     */
-    public String getName()
-    {
-        return name;
-    }
+	public Student(long id, String name, Gender gender) {
+		this.id = id;
+		this.name = name;
+		this.gender = gender;
+	}
+	
+	/**
+	 * @return the gender
+	 */
+	public Gender getGender() {
+		return gender;
+	}
 
-    /**
-     * @param name the name to set
-     */
-    public void setName(String name)
-    {
-        this.name = name;
-    }
+	/**
+	 * @param gender
+	 *            the gender to set
+	 */
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
+
+	public static enum Gender {
+		MALE, FEMALE
+	};
+
+	/**
+	 * @return the id
+	 */
+	public long getId() {
+		return id;
+	}
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name
+	 *            the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
 }

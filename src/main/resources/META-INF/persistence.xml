@@ -1,0 +1,8 @@
+<persistence>
+	<persistence-unit name="CourseManagement">
+		<description></description>
+		<jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
+		<class>it.bhuman.jeekol.entities.Course</class>
+		<class>it.bhuman.jeekol.entities.Student</class>
+	</persistence-unit>
+</persistence>

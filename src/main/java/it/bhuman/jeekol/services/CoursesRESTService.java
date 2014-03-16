@@ -20,7 +20,7 @@ package it.bhuman.jeekol.services;
 
 import it.bhuman.jeekol.entities.Course;
 import it.bhuman.jeekol.entities.Student;
-import it.johnj.jeekol.services.DummyDB;
+import it.johnj.jeekol.services.DummyJPA;
 
 import java.util.Set;
 
@@ -41,7 +41,7 @@ import javax.ws.rs.core.Response;
 public class CoursesRESTService
 {
     @EJB
-    private DummyDB dataStore;
+    private DummyJPA dataStore;
     
     @GET
     @Path("/courses")
